@@ -1,0 +1,35 @@
+version: "3"
+
+services:
+  registry-cache:
+    image: registry:2
+    ports:
+      - "443:5000"
+    volumes:
+      - ./config-cache.yml:/etc/docker/registry/config.yml
+      - ./cache_vol/:/var/lib/registry
+      - ./certs/:/certs
+    environment:
+      REGISTRY_PROXY_REMOTEURL: https://registry-1.docker.io
+      REGISTRY_HTTP_TLS_CERTIFICATE: /certs/fullchain.pem
+      REGISTRY_HTTP_TLS_KEY: /certs/privkey.pem
+
+
+  registry-private:
+    image: registry:2
+    ports:
+      - "7000:5000"  # HTTPS port
+    volumes:
+      - ./config-private.yml:/etc/docker/registry/config.yml
+      - ./private_vol/:/var/lib/registry
+      - ./certs/:/certs
+      - ./htpasswd:/auth/htpasswd
+    environment:
+      REGISTRY_HTTP_ADDR: 0.0.0.0:5000
+      REGISTRY_HTTP_TLS_CERTIFICATE: /certs/fullchain.pem
+      REGISTRY_HTTP_TLS_KEY: /certs/privkey.pem
+      REGISTRY_HTTP_SECRET: 123456
+      REGISTRY_AUTH: htpasswd
+      REGISTRY_AUTH_HTPASSWD_PATH: /auth/htpasswd
+      REGISTRY_AUTH_HTPASSWD_REALM: Registry Real 
+

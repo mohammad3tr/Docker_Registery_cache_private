@@ -80,7 +80,7 @@ docker push <your repository URL>:7000/m3tr-jenkins:latest
 #Example : docker push registry.a.com:7000/m3tr-jenkins:latest
 
 6-
-docker push <your repository URL>:7000/m3tr-jenkins:latest
+docker pull <your repository URL>:7000/m3tr-jenkins:latest
 #Example : docker pull registry.a.com:7000/m3tr-jenkins:latest
 
 ```

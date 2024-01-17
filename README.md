@@ -35,7 +35,7 @@ htpasswd -Bbn <Your UserName> > < Your Password> htpasswd # encrypt your passwor
 ```
 
 
-## client side config :
+## Client side config :
 
 
 ***To use the cache_registry for pulling images***

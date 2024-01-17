@@ -73,15 +73,15 @@ Login Succeeded
 
 4-
 docker tag <your image:tag> <your repository URL>:7000/<your image>:tag
-#Example : docker tag m3tr-jenkins:latest registry.a.com:7000/m3tr-jenkins:latest
+#Example: docker tag m3tr-jenkins:latest registry.a.com:7000/m3tr-jenkins:latest
 
 5-
 docker push <your repository URL>:7000/m3tr-jenkins:latest
-#Example : docker push registry.a.com:7000/m3tr-jenkins:latest
+#Example: docker push registry.a.com:7000/m3tr-jenkins:latest
 
 6-
 docker pull <your repository URL>:7000/m3tr-jenkins:latest
-#Example : docker pull registry.a.com:7000/m3tr-jenkins:latest
+#Example: docker pull registry.a.com:7000/m3tr-jenkins:latest
 
 ```
 

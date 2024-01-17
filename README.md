@@ -14,7 +14,7 @@ sudo certbot certonly --standalone -d <your domain address>
 ls  /etc/letsencrypt/live/
 ls /etc/letsencrypt/archive/
 
-4--
+4-
 cd Docker-Registery
 5-
 mkdir certs
@@ -38,7 +38,7 @@ htpasswd -Bbn <Your UserName> > < Your Password> htpasswd # encrypt your passwor
 ## client side config :
 
 
-***To use cache registry for pulling images***
+***To use the cache_registry for pulling images***
 ```
 
 1- 
@@ -57,7 +57,7 @@ touch  /etc/docker/daemon.json
 sudo systemctl daemon-reload
 sudo systemctl restart docker.service
 ```
-***To use private registry for pushing  and pulling your images***
+***To use the private_registry to push  and pull your images***
 ```
 3-
 docker login -u <"your username"> -p <"your password"> <your repository URL>:7000
